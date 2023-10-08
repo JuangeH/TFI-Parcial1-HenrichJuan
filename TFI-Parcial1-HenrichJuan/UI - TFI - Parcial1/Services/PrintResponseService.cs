@@ -8,60 +8,36 @@ using static MudBlazor.CategoryTypes;
 
 namespace UI___TFI___Parcial1.Services
 {
-    public class PrintResponseService : IHostedService, IDisposable
+    public class PrintResponseService : BackgroundService
     {
-        private readonly IServiceScopeFactory _scopeFactory;
-        private Timer _timer;
-        FileDataModel _fileDataModel;
-        private readonly IDapper _dapper;
+        private readonly RabbitMqManager _rabbitMqManager;
 
-        public PrintResponseService(IServiceScopeFactory scopeFactory, IDapper dapper)
+        public PrintResponseService(RabbitMqManager rabbitMqManager)
         {
-            _scopeFactory = scopeFactory;
-            _dapper = dapper;
+            _rabbitMqManager = rabbitMqManager;
         }
 
-        public Task StartAsync(CancellationToken cancellationToken)
+        public override Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromMinutes(1)); // Ejecutar cada 1 minuto
-            return Task.CompletedTask;
+            return base.StartAsync(cancellationToken);
+        }
+        public override Task StopAsync(CancellationToken cancellationToken)
+        {
+            return base.StopAsync(cancellationToken);
         }
 
-        private async void DoWork(object state)
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            using (var scope = _scopeFactory.CreateScope())
+            try
             {
-                // Lógica para leer las respuestas de impresión y registrarlas en la base de datos
-                // ...
-                _fileDataModel = new FileDataModel();
-
-                var rabbitMqManager = new RabbitMqManager("localhost", "guest", "guest");
-                var result = await rabbitMqManager.ConsumeMessages("ReceiverQueue");
-
-                _fileDataModel = JsonConvert.DeserializeObject<FileDataModel>(result);
-
-                var sp = "INSERT INTO [dbo].[DocumentosRegistrados] (Nombre, FechaInsercion, FechaImpresion) VALUES (@Nombre, @FechaInsercion, @FechaImpresion)";
-                var parms = new DynamicParameters();
-                parms.Add("Nombre", _fileDataModel.Nombre, DbType.String);
-                parms.Add("FechaInsercion", _fileDataModel.FechaInsercion, DbType.DateTime);
-                parms.Add("FechaImpresion", _fileDataModel.FechaImpresion, DbType.DateTime);
-
-                await Task.Run(() => _dapper.Execute(sp, parms, CommandType.Text));
-
-                // Ejemplo de cómo ejecutar una consulta con Dapper
-                // var result = dapperHelper.Get<TipoDeRespuesta>("NombreDelStoredProc", parametros);
+                await _rabbitMqManager.ConsumeMessages("ReceiverQueue");
             }
-        }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que ocurra durante la recepción o procesamiento del mensaje
+                Console.WriteLine($"Error: {ex.Message}");
+            }
 
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            _timer?.Change(Timeout.Infinite, 0);
-            return Task.CompletedTask;
-        }
-
-        public void Dispose()
-        {
-            _timer?.Dispose();
         }
     }
 }

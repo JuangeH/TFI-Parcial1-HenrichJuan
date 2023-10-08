@@ -60,9 +60,8 @@ namespace Reciever.Managers
             Console.WriteLine($"[x] Enviado '{message}' a '{queueName}'");
         }
 
-        public async Task<string> ConsumeMessages(string queueName)
+        public async Task ConsumeMessages(string queueName)
         {
-            var tcs = new TaskCompletionSource<string>();
             var consumer = new EventingBasicConsumer(_channel);
 
             consumer.Received += async (model, ea) =>
@@ -70,16 +69,15 @@ namespace Reciever.Managers
                 try
                 {
                     var mensaje = Encoding.UTF8.GetString(ea.Body.ToArray());
-                    tcs.SetResult(mensaje);
-                    _channel.BasicAck(ea.DeliveryTag, false);
 
                     var deserializedMessage = JsonConvert.DeserializeObject<FileDataModel>(mensaje);
                     // Modifica el atributo Prioridad y FechaImpresion
                     deserializedMessage.Prioridad = 1;
                     deserializedMessage.FechaImpresion = DateTime.Now;
-
+                    DeclareQueue("ReceiverQueue");
                     // Enviar el mensaje modificado a la cola ReceiverQueue
-                    SendMessage("ReceiverQueue", mensaje);
+                    SendMessage("ReceiverQueue", deserializedMessage);
+                    _channel.BasicAck(ea.DeliveryTag, false);
                 }
                 catch (Exception ex)
                 {
@@ -92,7 +90,6 @@ namespace Reciever.Managers
                                   autoAck: false,
                                   consumer: consumer);
 
-            return await tcs.Task;
         }
 
         public void Close()

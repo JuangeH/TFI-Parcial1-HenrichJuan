@@ -5,18 +5,24 @@ using MudBlazor.Services;
 using UI___TFI___Parcial1.Helpers.Contracs;
 using UI___TFI___Parcial1.Helpers.Service;
 using UI___TFI___Parcial1.Services;
+using Microsoft.Extensions.Configuration;
+using UI___TFI___Parcial1.Managers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddMudServices();
-builder.Services.AddSingleton<WeatherForecastService>(); 
+builder.Services.AddMudServices(); 
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<IDapper, DapperHelper>(); // Registra Dapper
-//builder.Services.AddScoped<ILoggingService, LoggingService>(); // Registra el servicio de registro
-builder.Services.AddSingleton<IHostedService, PrintResponseService>();
+string username = builder.Configuration.GetValue<string>("RabbitMq:Username");
+string password = builder.Configuration.GetValue<string>("RabbitMq:Password");
+string host = builder.Configuration.GetValue<string>("RabbitMq:Host");
+var serviceProvider = builder.Services.BuildServiceProvider();
+builder.Services.AddTransient<PrintResponseService>(x => new PrintResponseService(new RabbitMqManager(host, username, password,serviceProvider.GetRequiredService<IDapper>())));
+builder.Services.AddTransient<RabbitMqManager>(x => new(host, username, password, serviceProvider.GetRequiredService<IDapper>()));
+builder.Services.AddHostedService<PrintResponseService>();
 builder.Services.AddSingleton<HttpClient>(sp =>
 {
     var httpClient = new HttpClient();

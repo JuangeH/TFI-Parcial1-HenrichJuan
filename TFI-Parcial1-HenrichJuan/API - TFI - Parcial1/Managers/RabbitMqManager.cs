@@ -54,7 +54,6 @@ namespace API___TFI___Parcial1.Managers
                                   routingKey: queueName,
                                   basicProperties: basicProperties,
                                   body: body);
-            Console.WriteLine($"[x] Enviado '{message}' a '{queueName}'");
         }
 
         public async Task<string> ConsumeMessages(string queueName)
