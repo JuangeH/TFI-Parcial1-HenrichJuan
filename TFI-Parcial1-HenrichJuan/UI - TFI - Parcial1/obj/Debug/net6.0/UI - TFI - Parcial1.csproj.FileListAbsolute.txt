@@ -1,0 +1,50 @@
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.csproj.AssemblyReference.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.AssemblyInfoInputs.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.AssemblyInfo.cs
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.RazorAssemblyInfo.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.RazorAssemblyInfo.cs
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\appsettings.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\UI - TFI - Parcial1.staticwebassets.runtime.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\UI - TFI - Parcial1.exe
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\UI - TFI - Parcial1.deps.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\UI - TFI - Parcial1.runtimeconfig.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\UI - TFI - Parcial1.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\UI - TFI - Parcial1.pdb
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.Extensions.Localization.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\MudBlazor.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\scopedcss\bundle\UI - TFI - Parcial1.styles.css
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\scopedcss\projectbundle\UI - TFI - Parcial1.bundle.scp.css
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.csproj.CopyComplete
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\refint\UI - TFI - Parcial1.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.pdb
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\UI - TFI - Parcial1.genruntimeconfig.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\obj\Debug\net6.0\ref\UI - TFI - Parcial1.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Dapper.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\System.Threading.Channels.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\UI - TFI - Parcial1\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

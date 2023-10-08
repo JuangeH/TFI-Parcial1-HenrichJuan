@@ -1,0 +1,160 @@
+﻿@page "/doc"
+
+@using Severity = MudBlazor.Severity;
+@using System.Net.Http.Headers
+@using System.Collections.Concurrent
+@using UI___TFI___Parcial1.Data
+@inject ISnackbar Snackbar
+@inject HttpClient httpClient
+@using System.Net.Http.Json
+
+<MudCard>
+    <MudForm @ref="form">
+        <MudCardContent>
+            <MudSelect T="int" @bind-Value="@prioridad" Label="Prioridad" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter">
+                <MudSelectItem T="int" Value="1" />
+                <MudSelectItem T="int" Value="2" />
+                <MudSelectItem T="int" Value="3" />
+                <MudSelectItem T="int" Value="4" />
+                <MudSelectItem T="int" Value="5" />
+            </MudSelect>
+            <MudFileUpload T="IBrowserFile" FilesChanged="UploadFiles">
+                <ButtonTemplate>
+                    <MudButton HtmlTag="label"
+                               Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               StartIcon="@Icons.Material.Filled.CloudUpload"
+                               for="@context">
+                        Upload Files
+                    </MudButton>
+                </ButtonTemplate>
+            </MudFileUpload>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="@(()=>Submit(form))">Submit</MudButton>
+        </MudCardActions>
+    </MudForm>
+</MudCard>
+
+@if (files != null)
+{
+    <MudList>
+        @foreach (var file in files)
+        {
+            <MudListItem Icon="@Icons.Material.Filled.AttachFile" @key="@file">
+                @file.Name <code>@file.Size bytes</code>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" Class="ml-auto" OnClick="@Detach">X</MudButton>
+            </MudListItem>
+            
+        }
+    </MudList>
+}
+
+@code
+{
+    int prioridad = 0;
+    private MudForm? form;
+    private bool SuppressOnChangeWhenInvalid;
+    FileDataModel _filedataModel = new FileDataModel();
+
+    private ConcurrentQueue<IBrowserFile> files = new ConcurrentQueue<IBrowserFile>();
+
+    private async Task UploadFiles(IBrowserFile file)
+    {
+        try
+        {
+            files.Enqueue(file);
+            Snackbar.Configuration.ShowTransitionDuration = 1;
+            Snackbar.Add("Documento agregado", severity: Severity.Success);
+            //StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+    private async Task Submit(MudForm form)
+    {
+        try
+        {
+            _filedataModel = new FileDataModel();
+            bool isFileSizeValid = true;
+
+            foreach (var item in files)
+            {
+                if (item.Size >= 512000)
+                {
+                    Snackbar.Configuration.ShowTransitionDuration = 1;
+                    Snackbar.Add("Documento demasiado pesado", severity: Severity.Error);
+                    isFileSizeValid = false;
+                    break;
+                }
+
+                var result0 = await OnFileSelection(item);
+                _filedataModel = result0;
+                _filedataModel.Prioridad = prioridad;
+                _filedataModel.Nombre = item.Name;
+
+                string url = "https://localhost:7255/Documentos/ImprimirDocumento";
+                var result = await httpClient.PostAsJsonAsync(url, _filedataModel);
+            }
+
+            if (isFileSizeValid)
+            {
+                await Detach();
+                Snackbar.Configuration.ShowTransitionDuration = 1;
+                Snackbar.Add("Documentos enviados", severity: Severity.Success);
+                //StateHasChanged(); // Actualizar el estado solo una vez después de enviar todos los archivos
+            }
+            await form.ResetAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    private async Task Detach()
+    {
+        files.Clear();
+    }
+
+    public class FileModel
+    {
+        public string Name { get; set; }
+        public IBrowserFile File { get; set; }
+    }
+
+    private async Task<FileDataModel> OnFileSelection(IBrowserFile File)
+    {
+        try
+        {
+            var buffer = new byte[File.Size];
+            await File.OpenReadStream().ReadAsync(buffer, 0, (int)File.Size);
+            string FileType = File.ContentType;
+            string FileUrl = $"data:{FileType};base64,{Convert.ToBase64String(buffer)}";
+            FileDataModel fileDataModel = new FileDataModel
+                {
+                    Data = buffer,
+                    FileType = FileType,
+                    Size = File.Size,
+                    Url = FileUrl
+                };
+
+            return fileDataModel;
+        }
+        catch (Exception ex)
+        {
+            
+            throw ex;
+        }
+
+        
+    }
+
+    /// <summary>
+    /// A standard AbstractValidator which contains multiple rules and can be shared with the back end API
+    /// </summary>
+    /// <typeparam name="OrderModel"></typeparam>
+    
+}
