@@ -3,6 +3,8 @@ using static System.Net.Mime.MediaTypeNames;
 using System;
 using API___TFI___Parcial1.Response;
 using API___TFI___Parcial1.Managers;
+using BLL.Contracts;
+using Domain.Models;
 
 namespace API___TFI___Parcial1.Controllers
 {
@@ -10,6 +12,13 @@ namespace API___TFI___Parcial1.Controllers
     [Route("[controller]")]
     public class DocumentosController : ControllerBase
     {
+        private readonly IGestorDocService _gestorDocService;
+
+        public DocumentosController(IGestorDocService gestorDocService)
+        {
+            _gestorDocService=gestorDocService;
+        }
+
         [HttpPost("ImprimirDocumento")]
         public async Task<IActionResult> ImprimirDocumento([FromBody] FileDataRequest fileDataRequest)
         {
@@ -32,6 +41,21 @@ namespace API___TFI___Parcial1.Controllers
                 return BadRequest(ex.Message);
             }
            
+        }
+        [HttpGet("ValidarDocumento")]
+        public async Task<IActionResult> ValidarDocumento([FromBody] FileDataModel fileDataRequest)
+        {
+            try
+            {
+                var result = _gestorDocService.ValidarDoc(fileDataRequest);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
     }
 }
