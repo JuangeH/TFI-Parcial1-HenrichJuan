@@ -63,21 +63,31 @@ namespace Reciever.Managers
         public async Task ConsumeMessages(string queueName)
         {
             var consumer = new EventingBasicConsumer(_channel);
+            Random random = new Random();
 
             consumer.Received += async (model, ea) =>
             {
                 try
                 {
-                    var mensaje = Encoding.UTF8.GetString(ea.Body.ToArray());
+                    if (random.Next(0, 3) == 1)
+                    {
+                        var mensaje = Encoding.UTF8.GetString(ea.Body.ToArray());
 
-                    var deserializedMessage = JsonConvert.DeserializeObject<FileDataModel>(mensaje);
-                    // Modifica el atributo Prioridad y FechaImpresion
-                    deserializedMessage.Prioridad = 1;
-                    deserializedMessage.FechaImpresion = DateTime.Now;
-                    DeclareQueue("ReceiverQueue");
-                    // Enviar el mensaje modificado a la cola ReceiverQueue
-                    SendMessage("ReceiverQueue", deserializedMessage);
-                    _channel.BasicAck(ea.DeliveryTag, false);
+                        var deserializedMessage = JsonConvert.DeserializeObject<FileDataModel>(mensaje);
+                        //Modifica el atributo Prioridad y FechaImpresion
+                        deserializedMessage.Prioridad = 1;
+                        deserializedMessage.FechaImpresion = DateTime.Now;
+                        DeclareQueue("ReceiverQueue");
+                        //Enviar el mensaje modificado a la cola ReceiverQueue
+                        SendMessage("ReceiverQueue", deserializedMessage);
+                        _channel.BasicAck(ea.DeliveryTag, false);
+                    }
+                    else
+                    {
+                        //No hace nada y se eliminan de la queue
+                        _channel.BasicReject(ea.DeliveryTag, false);
+                    }
+
                 }
                 catch (Exception ex)
                 {

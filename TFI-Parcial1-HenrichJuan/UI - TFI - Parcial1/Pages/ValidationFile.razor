@@ -1,7 +1,53 @@
 ﻿@page "/validation"
+@using UI___TFI___Parcial1.Data
+@inject HttpClient httpClient
+@inject ISnackbar Snackbar
+@using Severity = MudBlazor.Severity;
 
-<h3>ValidationFile</h3>
+<MudCard>
+	<MudForm Model="@fileDataModel" @ref="@form">
+		<MudCardContent>
+			<MudTextField @bind-Value="fileDataModel.Nombre"
+						  For="@(() => fileDataModel.Nombre)"
+							  Immediate="true"
+							  Label="Name" />
+        </MudCardContent>
+	</MudForm>
+    <MudCardActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="@(async () => await Validar(form))">Validar</MudButton>
+    </MudCardActions>
+</MudCard>
 
 @code {
 
+    MudForm? form;
+    FileDataModel fileDataModel = new FileDataModel();
+
+    private async Task Validar(MudForm form)
+    {   
+        try
+        {
+            string url = "https://localhost:7255/Documentos/ValidarDocumento";
+            var result = await httpClient.PostAsJsonAsync(url, fileDataModel);
+
+            if (result.IsSuccessStatusCode)
+            {
+                Snackbar.Configuration.ShowTransitionDuration = 1;
+                Snackbar.Add("Documento impreso", severity: Severity.Success);
+            }
+            else{
+                Snackbar.Configuration.ShowTransitionDuration = 1;
+                Snackbar.Add("Documento no impreso", severity: Severity.Error);
+            }
+
+
+            await form.ResetAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+	
 }

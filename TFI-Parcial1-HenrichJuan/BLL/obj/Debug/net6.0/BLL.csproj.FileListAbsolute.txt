@@ -1,0 +1,17 @@
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\DAL.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\Domain.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\DAL.pdb
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\bin\Debug\net6.0\Domain.pdb
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\Juan\Desktop\Repositorios\TFI-Parcial1-HenrichJuan\TFI-Parcial1-HenrichJuan\BLL\obj\Debug\net6.0\ref\BLL.dll

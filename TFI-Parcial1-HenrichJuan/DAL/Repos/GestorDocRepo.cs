@@ -59,13 +59,7 @@ namespace DAL.Repos
             {
                 var dbPara = new DynamicParameters();
                 dbPara.Add("Nombre", fileDataModel.Nombre);
-                fileDataModel.Data = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).Data;
-                fileDataModel.FileType = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).FileType;
-                fileDataModel.Size = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).Size;
-                fileDataModel.Prioridad = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).Prioridad;
-                fileDataModel.FechaInsercion = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).FechaInsercion;
-                fileDataModel.FechaImpresion = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).FechaImpresion;
-                fileDataModel.Url = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text).Url;
+                fileDataModel = _dapperHelper.Get<FileDataModel>(SelectAllByNom, dbPara, commandType: CommandType.Text);
 
                 return fileDataModel;
             }

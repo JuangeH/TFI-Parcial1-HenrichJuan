@@ -42,14 +42,23 @@ namespace API___TFI___Parcial1.Controllers
             }
            
         }
-        [HttpGet("ValidarDocumento")]
-        public async Task<IActionResult> ValidarDocumento([FromBody] FileDataModel fileDataRequest)
+
+        [HttpPost("ValidarDocumento")]
+        public async Task<IActionResult> ValidarDocumento([FromBody] FileDataRequest fileDataRequest)
         {
             try
             {
-                var result = _gestorDocService.ValidarDoc(fileDataRequest);
+                FileDataModel fileDataModel = new FileDataModel();
+                fileDataModel.Nombre = fileDataRequest.Nombre;
 
-                return Ok();
+                var result = _gestorDocService.ValidarDoc(fileDataModel);
+
+                if (result is null)
+                {
+                    return BadRequest(result);
+                }
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
